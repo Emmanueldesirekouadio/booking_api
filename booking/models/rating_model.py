@@ -14,6 +14,7 @@ RATING_CHOICE = [
 
 class RatingModel(models.Model):
     service = models.ForeignKey(ServiceModel, on_delete=models.CASCADE, related_name='ratings')
+    prestataire = models.ForeignKey('ProviderModel', on_delete=models.CASCADE)
     rating = models.IntegerField(choices=RATING_CHOICE)
     comment = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
