@@ -1,6 +1,5 @@
-# service serializer
+from booking_api.booking.models.services_model import ServiceModel
 from rest_framework import serializers
-from booking.models.services_model import ServiceModel
 
 
 class ServiceSerializer(serializers.ModelSerializer):

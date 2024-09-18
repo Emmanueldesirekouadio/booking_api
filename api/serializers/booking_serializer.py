@@ -1,8 +1,8 @@
+from booking_api.booking.models.services_model import ServiceModel
 from rest_framework import serializers
-from booking.models.booking_model import BookingModel
 
 
-class BookingSerializer(serializers.ModelSerializer):
+class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
-        model = BookingModel
+        model = ServiceModel
         fields = '__all__'

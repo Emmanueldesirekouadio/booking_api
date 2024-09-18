@@ -1,8 +1,8 @@
 from django.db import models
-from django.forms import DateTimeField
+from base.helpers.date_time_model import DateTimeModel
 
 
-class ProviderModel(DateTimeField):
+class ProviderModel(DateTimeModel):
     first_name = models.CharField(max_length=225)
     last_name = models.CharField(max_length=255)
     email = models.EmailField()

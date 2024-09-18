@@ -1,5 +1,6 @@
 from django.db import models
 from booking.models.services_model import ServiceModel
+from base.helpers.date_time_model import DateTimeModel
 
 
 
@@ -12,7 +13,7 @@ RATING_CHOICE = [
     (5, 'excellent')
 ]
 
-class RatingModel(models.Model):
+class RatingModel(DateTimeModel):
     service = models.ForeignKey(ServiceModel, on_delete=models.CASCADE, related_name='ratings')
     prestataire = models.ForeignKey('ProviderModel', on_delete=models.CASCADE)
     rating = models.IntegerField(choices=RATING_CHOICE)
