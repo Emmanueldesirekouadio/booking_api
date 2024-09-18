@@ -1,7 +1,10 @@
 from django.db import models
 from booking.models.services_model import ServiceModel
 
-RATING_CHOICES = [
+
+
+
+RATING_CHOICE = [
     (1, 'very bad'),
     (2, 'bad'),
     (3, 'average'),
@@ -11,7 +14,7 @@ RATING_CHOICES = [
 
 class RatingModel(models.Model):
     service = models.ForeignKey(ServiceModel, on_delete=models.CASCADE, related_name='ratings')
-    rating = models.IntegerField(choices=RATING_CHOICES)
+    rating = models.IntegerField(choices=RATING_CHOICE)
     comment = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
