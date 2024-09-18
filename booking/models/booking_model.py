@@ -3,11 +3,10 @@ from django.forms import DateTimeField
 
 
 class BookingModel(DateTimeField):
-    first_name = models.CharField(max_length=225)
-    last_name = models.CharField(max_length=255)
-    email = models.EmailField()
-    phone = models.CharField(max_length=15)
-
+    service = models.ForeignKey('ServiceModel', on_delete=models.CASCADE, related_name='booking')
+    booking_date = models.DateTimeField()
+    customer_name = models.CharField(max_length=225)
+    custmer_email = models.EmailField()
 
     def __str__(self):
-        return f'{self.first_name} - {self.last_name}'
+        return f'{self.service.name} - {self.customer_name}'
